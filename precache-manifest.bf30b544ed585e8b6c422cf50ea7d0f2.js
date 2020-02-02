@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77b683266abf39d831dcac37e7f0a9b4",
+    "revision": "afdca3904d413548bbcd019c559af1c6",
     "url": "/vk-auth/index.html"
   },
   {
-    "revision": "caa4971e2b2238341fa4",
-    "url": "/vk-auth/static/css/main.04299542.chunk.css"
+    "revision": "16d8fa1295148c37a00d",
+    "url": "/vk-auth/static/css/main.82396419.chunk.css"
   },
   {
     "revision": "f52f8d9ef383d161d1de",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vk-auth/static/js/2.ab4f4ea2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "caa4971e2b2238341fa4",
-    "url": "/vk-auth/static/js/main.8197d522.chunk.js"
+    "revision": "16d8fa1295148c37a00d",
+    "url": "/vk-auth/static/js/main.2f9573be.chunk.js"
   },
   {
     "revision": "e82471766e9e24bbcd5d",
