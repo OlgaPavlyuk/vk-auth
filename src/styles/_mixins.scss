@@ -1,0 +1,26 @@
+@mixin breakpoint($breakpoint, $direction) {
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    
+    @if $direction == down {
+      @media (max-width: ($breakpoint-value - 1)) {
+        @content;
+      }
+    } @else if $direction == up {      
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    }
+  } @else {
+    @if $direction == down {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else if $direction == up {      
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }  
+  }
+}

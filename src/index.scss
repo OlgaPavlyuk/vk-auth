@@ -1,0 +1,97 @@
+html {
+  font-size: 100%;
+}
+
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
+
+body {
+  margin: 0;
+  background-color: rgba(#E5E5E5, 0.3);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #3F3356;
+}
+
+/* common styles */
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.container {
+  margin: 0 16px;
+
+  @include breakpoint(sm, up) {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(md, up) {
+    max-width: 720px;
+  }
+
+  @include breakpoint(lg, up) {
+    max-width: 960px;
+  }
+
+  @include breakpoint(xl, up) {
+    max-width: 1140px;
+  }
+}
+
+.page {
+  padding: 3rem 0;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.25rem 1rem;
+  min-height: 2rem;
+  color: #FFF;
+  background-color: $color;
+  border: 2px solid $color;
+  border-radius: .75rem;
+  transition: 0.25s ease-in;
+
+  &:focus {
+    box-shadow: 0 0 5px 2px $color-light;
+    outline: none;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color-dark;
+    border-color: $color-dark;
+    box-shadow: none; 
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: default;
+  }
+}
