@@ -3,6 +3,7 @@ import {
   USER_REQUEST,
   LOGIN_FAIL,
   LOGOUT,
+  CREAR_LOGIN,
   USER_SUCCESS,
 } from '../actions/loginActions'
 
@@ -34,6 +35,7 @@ export function loginReducer(state = initialState, action) {
         error: action.payload.message,
       }
     
+    case CREAR_LOGIN:
     case LOGOUT:
       return {
         ...state,

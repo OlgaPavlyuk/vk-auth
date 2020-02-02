@@ -1,10 +1,12 @@
 import React from 'react';
+import './Error.scss';
 
 const Error = (props) => {
   return (
-    <h1 className="error">
-      {props.text}
-    </h1>
+    <div className="error">
+      <div className="error__text">{props.text}</div>
+      <button className="error__close" onClick={props.onClose}></button>
+    </div>
   );
 };
 

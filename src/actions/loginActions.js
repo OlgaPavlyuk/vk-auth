@@ -2,6 +2,7 @@ export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
+export const CREAR_LOGIN = 'CREAR_LOGIN';
 export const USER_REQUEST = 'USER_REQUEST';
 export const USER_SUCCESS = 'USER_SUCCESS';
 
@@ -13,7 +14,11 @@ export function getUserInfo(id) {
       type: USER_REQUEST,
     })
 
-    VK.Api.call('users.get', { users_id: id, fields: 'photo_max, counters', v: '5.103' },
+    VK.Api.call('users.get', {
+      users_id: id,
+      fields: 'photo_max, counters',
+      v: '5.103'
+    },
       (response) => {
         if (response.response) {
           const { id, first_name, last_name, photo_max, counters } = response.response[0];
@@ -82,9 +87,8 @@ export function checkLogin() {
         const userId = response.session.mid;
         dispatch(getUserInfo(userId));
       } else {
-        // find different name for action?
         dispatch({
-          type: LOGOUT,
+          type: CREAR_LOGIN,
         });
       }
     });
