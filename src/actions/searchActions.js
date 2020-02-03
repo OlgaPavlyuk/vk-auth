@@ -1,7 +1,7 @@
 export const SEARCH_REQUEST = 'SEARCH_REQUEST';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 export const SEARCH_FAIL = 'SEARCH_FAIL';
-export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+export const RESET_SEARCH = 'RESET_SEARCH';
 export const USER_LOGOUT = '';
 
 export function getFriends(query) {
@@ -9,7 +9,7 @@ export function getFriends(query) {
   if (query === '') {
     return function (dispatch) {    
       dispatch({
-        type: CLEAR_SEARCH,
+        type: RESET_SEARCH,
       })
     }
   };
@@ -18,7 +18,7 @@ export function getFriends(query) {
   return function (dispatch) {
     if (query === '') {
       dispatch({
-        type: CLEAR_SEARCH,
+        type: RESET_SEARCH,
       })
     }
 
@@ -27,7 +27,10 @@ export function getFriends(query) {
     })
 
     VK.Api.call('friends.search',
-      { q: query, v: '5.103' },
+      {
+        q: query,
+        v: '5.103',
+      },
       (response) => {
         if (response.response) {
           const { items, count } = response.response;
@@ -52,7 +55,7 @@ export function getFriends(query) {
 export function clearSearch() {
   return function (dispatch) {
     dispatch({
-      type: CLEAR_SEARCH,
+      type: RESET_SEARCH,
     })
   }
 };

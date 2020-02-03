@@ -11,21 +11,19 @@ const User = (props) => {
 
   return (
     <div className="user">
-      <h1 className="user__name">
-        {firstName} {lastName}
-      </h1>
-      <div className="user__info">
-        <span className="user__friends-count">
-          <FriendsIcon width="2rem" height="2rem"/>
-          {friendsCount}
-        </span>
-        <button className="btn logout" onClick={onLogout}>Log out</button>
-      </div>
       <img
         src={photo}
         alt={`${firstName} ${lastName}`}
+        title={`${firstName} ${lastName}`}
         className="user__photo"
       />
+      <div className="user__info">
+        <button className="btn logout user__logout" onClick={onLogout}>Log out</button>
+        <span className="user__friends-count">
+          <FriendsIcon width="1.5rem" height="1.5rem"/>
+          {friendsCount}
+        </span>
+      </div>
     </div>
   );
 };

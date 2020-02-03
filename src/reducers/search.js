@@ -2,7 +2,7 @@ import {
   SEARCH_REQUEST,
   SEARCH_SUCCESS,
   SEARCH_FAIL,
-  CLEAR_SEARCH,
+  RESET_SEARCH,
 } from '../actions/searchActions';
 
 const initialState = {
@@ -16,7 +16,7 @@ const initialState = {
 
 export function searchReducer(state = initialState, action) {
   switch (action.type) {
-    case CLEAR_SEARCH:
+    case RESET_SEARCH:
       return {
         ...state,
         isFetching: false,

@@ -16,17 +16,17 @@ export function getUserInfo(id) {
 
     VK.Api.call('users.get', {
       users_id: id,
-      fields: 'photo_max, counters',
-      v: '5.103'
+      fields: 'photo_100, counters',
+      v: '5.103',
     },
       (response) => {
         if (response.response) {
-          const { id, first_name, last_name, photo_max, counters } = response.response[0];
+          const { id, first_name, last_name, photo_100, counters } = response.response[0];
           const user = {
             id,
             firstName: first_name,
             lastName: last_name,
-            photo: photo_max,
+            photo: photo_100,
             friendsCount: counters.friends,
           };
 
@@ -57,10 +57,16 @@ export function handleLogin() {
         const userId = response.session.user.id;
         dispatch(getUserInfo(userId));
       } else {
+        let message;
+        if (response.status === 'not_authorized') {
+          message = 'Authorization is canceled.'
+        } else {
+          message = 'Authorization is not allowed. Check your browser settings.';
+        }
         dispatch({
           type: LOGIN_FAIL,
-          payload: new Error('Authorization canceled')
-        });        
+          payload: new Error(message)
+        });
       }
     }, 2);
   }

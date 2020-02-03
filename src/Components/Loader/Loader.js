@@ -4,7 +4,8 @@ import './Loader.scss';
 const Loader = () => {
   return (
     <div className="loader">
-      Loading...
+      <div className="loader__text">Loading</div>
+      <div className="spinner"></div>
     </div>
   );
 };

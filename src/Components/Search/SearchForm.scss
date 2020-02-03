@@ -1,9 +1,9 @@
 .search {
+  margin: 3rem 0 2rem;
+
   &-form {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-
+    
     &__input-wrapper {
       position: relative;
       display: inline-block;
@@ -43,7 +43,7 @@
 
       &::placeholder {
         color: #D0C9D6;
-        transition: opacity 0.25s ease-in;
+        transition: opacity 0.15s ease-in;
       }
     }
 
